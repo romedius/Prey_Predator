@@ -9,13 +9,13 @@ private static final long serialVersionUID = 1L;
 
 	private Random r = new Random(System.currentTimeMillis());
 	
-	private static final int pb=90;
-	private static final int pbd=5;
+	private static final int pb=90; // probaility that a bear "replicates" after a good meal
+	private static final int pbd=5; // probability that a bear dies
 	
-	private static final int pf=100;
-	private static final int pfd=2;
+	private static final int pf=100; // probaility that a fox "replicates" after a good meal
+	private static final int pfd=2; // probability that a fox dies
 	
-	private static final int pp=100;
+	private static final int pp=100; // probaility that a bunny "replicates" after a good meal 
 
 	/*
 	 * Type is
@@ -99,7 +99,7 @@ private static final long serialVersionUID = 1L;
 				break;
 			}
 			case 1: { // bunny
-				if (population[nbX][nbY][0] == 0){
+				if (population[nbX][nbY][0] == 0){ // bunny moves to vacant
 					population[nbX][nbY][0] = 1;
 					population[pX][pY][0] = (((Math.abs(r.nextInt())%100)<pp)?1:0);
 				}						
